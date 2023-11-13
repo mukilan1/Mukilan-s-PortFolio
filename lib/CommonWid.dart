@@ -82,3 +82,5 @@ Widget DrawerWid(BuildContext context, ScrollController _scrollController) {
 String LinkedInURL = "https://www.linkedin.com/in/mukilan-ss-82b9bb1b5/";
 String GitHubURL = "https://github.com/mukilan1";
 String TwitterURL = "https://twitter.com/MUKILANTITLE";
+
+String MyImage = "assets/images/MyImage.png";

@@ -701,14 +701,14 @@ class MailBtn extends StatelessWidget {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text('Email Address'),
+              title: const Text('Email Address'),
               content: Text(email),
               actions: [
                 TextButton(
-                  child: Text('Copy'),
+                  child: const Text('Copy'),
                   onPressed: () {
                     FlutterClipboard.copy(email).then((result) {
-                      final snackBar = SnackBar(
+                      const snackBar = SnackBar(
                         content: Text('Copied to Clipboard'),
                       );
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -717,7 +717,7 @@ class MailBtn extends StatelessWidget {
                   },
                 ),
                 TextButton(
-                  child: Text('Cancel'),
+                  child: const Text('Cancel'),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },

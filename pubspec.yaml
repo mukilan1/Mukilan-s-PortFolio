@@ -35,6 +35,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_gradient_animation_text: ^1.0.2
+  flutter_launcher_icons: ^0.13.1
   google_fonts: ^6.1.0
   iconify_flutter: ^0.0.5
   material_design_icons_flutter: ^7.0.7296
@@ -45,6 +46,14 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+  
+
+flutter_launcher_icons:
+  web:
+    generate: true
+    image_path: "assets/Myicon.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

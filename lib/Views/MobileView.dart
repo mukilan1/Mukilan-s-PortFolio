@@ -2,7 +2,6 @@
 
 import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gradient_animation_text/flutter_gradient_animation_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:myportfolio/CommonWid.dart';
@@ -384,23 +383,12 @@ class StackesusedMobile extends StatelessWidget {
               Flexible(child: Container()),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 // Tranform Text
-                GradientAnimationText(
-                  text: Text(
-                    'Stacks in my Box',
+                Text('Stacks in my Box',
                     style: GoogleFonts.outfit(
                       fontSize: 40,
+                      color: const Color.fromARGB(255, 102, 125, 210),
                       fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  colors: const [
-                    Color.fromARGB(255, 0, 0, 0),
-                    Color.fromARGB(255, 0, 0, 0),
-                    Color.fromARGB(255, 110, 129, 255),
-                    Color.fromARGB(255, 113, 132, 255),
-                  ],
-                  duration: const Duration(seconds: 5),
-                  transform: const GradientRotation(20 / 4), // tranform
-                ),
+                    ))
               ]),
               const SizedBox(
                 height: 40,
@@ -698,14 +686,14 @@ class MailBtn extends StatelessWidget {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text('Email Address'),
+              title: const Text('Email Address'),
               content: Text(email),
               actions: [
                 TextButton(
-                  child: Text('Copy'),
+                  child: const Text('Copy'),
                   onPressed: () {
                     FlutterClipboard.copy(email).then((result) {
-                      final snackBar = SnackBar(
+                      const snackBar = SnackBar(
                         content: Text('Copied to Clipboard'),
                       );
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -714,7 +702,7 @@ class MailBtn extends StatelessWidget {
                   },
                 ),
                 TextButton(
-                  child: Text('Cancel'),
+                  child: const Text('Cancel'),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
