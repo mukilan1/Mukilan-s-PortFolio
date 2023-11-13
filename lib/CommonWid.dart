@@ -1,3 +1,6 @@
+// ignore: file_names
+// ignore_for_file: file_names, duplicate_ignore, no_leading_underscores_for_local_identifiers, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 Widget DrawerWid(BuildContext context, ScrollController _scrollController) {
@@ -6,9 +9,9 @@ Widget DrawerWid(BuildContext context, ScrollController _scrollController) {
       color: Colors.black, // Set the background color to black
       child: ListView(
         children: [
-          SizedBox(height: 50),
+          const SizedBox(height: 50),
           ListTile(
-            leading: Icon(Icons.stacked_bar_chart,
+            leading: const Icon(Icons.stacked_bar_chart,
                 color: Colors.white), // Add an icon
             title: const Text(
               "Stacks",
@@ -24,7 +27,7 @@ Widget DrawerWid(BuildContext context, ScrollController _scrollController) {
             },
           ),
           ListTile(
-            leading: Icon(Icons.work, color: Colors.white), // Add an icon
+            leading: const Icon(Icons.work, color: Colors.white), // Add an icon
             title: const Text(
               "Experience",
               style: TextStyle(color: Colors.white), // Set text color to white
@@ -39,7 +42,7 @@ Widget DrawerWid(BuildContext context, ScrollController _scrollController) {
             },
           ),
           ListTile(
-            leading: Icon(Icons.follow_the_signs,
+            leading: const Icon(Icons.follow_the_signs,
                 color: Colors.white), // Add an icon
             title: const Text(
               "Follows",
@@ -55,8 +58,8 @@ Widget DrawerWid(BuildContext context, ScrollController _scrollController) {
             },
           ),
           ListTile(
-            leading:
-                Icon(Icons.contact_mail, color: Colors.white), // Add an icon
+            leading: const Icon(Icons.contact_mail,
+                color: Colors.white), // Add an icon
             title: const Text(
               "Connect",
               style: TextStyle(color: Colors.white), // Set text color to white
@@ -75,3 +78,7 @@ Widget DrawerWid(BuildContext context, ScrollController _scrollController) {
     ),
   );
 }
+
+String LinkedInURL = "https://www.linkedin.com/in/mukilan-ss-82b9bb1b5/";
+String GitHubURL = "https://github.com/mukilan1";
+String TwitterURL = "https://twitter.com/MUKILANTITLE";

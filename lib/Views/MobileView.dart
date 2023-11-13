@@ -1,5 +1,6 @@
 // ignore_for_file: file_names, use_key_in_widget_constructors, library_private_types_in_public_api, deprecated_member_use
 
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gradient_animation_text/flutter_gradient_animation_text.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -599,22 +600,22 @@ class _ContactDeskTabState extends State<ContactMobile> {
             const MailBtn(
               icon: Icons.email,
               color: Colors.red,
-              email: 'mailto:mukilanmailspace@gmail.com',
+              email: 'mukilanmailspace@gmail.com',
             ),
             CustomIconButton(
               icon: MdiIcons.github,
               color: Colors.white,
-              url: 'https://github.com/mukilan1',
+              url: GitHubURL,
             ),
             CustomIconButton(
               icon: MdiIcons.linkedin,
               color: const Color.fromARGB(255, 27, 118, 255),
-              url: 'https://www.linkedin.com/in/mukilan-ss-82b9bb1b5/',
+              url: LinkedInURL,
             ),
             CustomIconButton(
               icon: MdiIcons.twitter,
               color: Colors.blue,
-              url: 'https://twitter.com/MUKILANTITLE',
+              url: TwitterURL,
             )
           ]),
           Flexible(child: Container()),
@@ -691,14 +692,37 @@ class MailBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String url = 'https://mail.google.com/mail/?view=cm&fs=1&to=$email';
     return InkWell(
       onTap: () async {
-        if (await canLaunch(url)) {
-          await launch(url);
-        } else {
-          throw 'Could not launch $url';
-        }
+        showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text('Email Address'),
+              content: Text(email),
+              actions: [
+                TextButton(
+                  child: Text('Copy'),
+                  onPressed: () {
+                    FlutterClipboard.copy(email).then((result) {
+                      final snackBar = SnackBar(
+                        content: Text('Copied to Clipboard'),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    });
+                    Navigator.of(context).pop();
+                  },
+                ),
+                TextButton(
+                  child: Text('Cancel'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            );
+          },
+        );
       },
       child: Padding(
         padding: const EdgeInsets.all(16.0),
